@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>Event Dashboard</header>
+
+<div class="container">
+    <div class="card">
+        <h2>Add New Event</h2>
+
+        <label>Event Title</label>
+        <input type="text" id="title">
+
+        <label>Event Date</label>
+        <input type="date" id="date">
+
+        <label>Category</label>
+        <select id="category">
+            <option>classroom</option>
+            <option>college</option>
+            <option>home</option>
+            <option>other</option>
+        </select>
+
+        <label>Description</label>
+        <textarea id="desc"></textarea>
+
+        <button onclick="addEvent()">Add Event</button>
+    </div>
+
+    <div class="card events">
+        <h2>My Events</h2>
+
+        <div class="top-buttons">
+            <button onclick="clearEvents()">Clear All Events</button>
+        </div>
+
+        <div id="eventList"></div>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
