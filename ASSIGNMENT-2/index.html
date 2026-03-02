@@ -3,19 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-        <link rel="stylesheet" href="style.css">
+    <title>Async Weather Tracker</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="weatherForm">
-        <h4>Search City</h4> 
-        <form action="" id="weatherForm">
-            <input type="text" id="city" placeholder="Enter city name">
-            <input type="submit" value="search">
-        </form>
+    <header>
+        <h1>🌤️ Async Weather Tracker</h1>
+    </header>
+
+    <div class="container">
+        <div class="column left-col">
+            <div class="card">
+                <h2>Search City</h2>
+                <form id="weatherForm">
+                    <input type="text" id="city" placeholder="Enter city name" required>
+                    <input type="submit" value="Search">
+                </form>
+            </div>
+
+            <div class="card">
+                <h2>Search History</h2>
+                <ul id="historyList"></ul>
+            </div>
+        </div>
+
+        <div class="column right-col">
+            <div class="card weather-card">
+                <h2>Weather Info</h2>
+                <div id="weatherDisplay">
+                    <p>Search for a city to see weather info.</p>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="info"></div>
-    <div class="console"></div>
+
+    <div class="container">
+        <div class="card console-card">
+            <h2>Console - Event Loop</h2>
+            <div id="consoleOutput"></div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
