@@ -6,8 +6,8 @@
 }
 
 body {
-    background-color: #1a237e; /* Dark blue background */
-    color: #333;
+    background-color: #2c3ce5; /* Dark blue background */
+    color: #4b0b0b;
     padding: 20px;
 }
 
@@ -61,7 +61,7 @@ h2 {
 
 #weatherForm input[type="submit"] {
     padding: 10px 20px;
-    background-color: #ff7043; /* Orange button */
+    background-color: #dd0e0e; /* Orange button */
     color: white;
     border: none;
     border-radius: 4px;
