@@ -1,4 +1,4 @@
-const API_KEY = '2d54b8e618d5491ad21d780ba2f02a23'; // Your unique API key
+const API_KEY = '2d54b8e618d5491ad21d780ba2f02a23';
 
 // Get the HTML elements we need to work with
 const form = document.querySelector('#weatherForm');
@@ -7,14 +7,14 @@ const weatherDisplay = document.querySelector('#weatherDisplay');
 const historyList = document.querySelector('#historyList');
 const consoleOutput = document.querySelector('#consoleOutput');
 
-// 1. Function to show messages in the black console box
+
 function logToScreen(message) {
     const p = document.createElement('p');
     p.textContent = "> " + message;
     consoleOutput.appendChild(p);
 }
 
-// 2. Function to get weather data from the internet
+
 async function getWeather(cityName) {
     weatherDisplay.innerHTML = "Loading...";
     consoleOutput.innerHTML = ""; // Clear console
@@ -22,7 +22,7 @@ async function getWeather(cityName) {
     logToScreen("start syncing");
 
     try {
-        // Connect to the weather website
+        
         const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}&units=metric`;
         const response = await fetch(url);
 
@@ -34,7 +34,7 @@ async function getWeather(cityName) {
         const data = await response.json();
         logToScreen("data get successfully");
 
-        // Put the weather info on the screen
+        
         weatherDisplay.innerHTML = `
             <h3>${data.name}</h3>
             <p>Temp: ${data.main.temp} °C</p>
@@ -42,7 +42,7 @@ async function getWeather(cityName) {
             <p>Humidity: ${data.main.humidity}%</p>
         `;
 
-        saveCity(data.name); // Save this city to our list
+        saveCity(data.name); 
 
     } catch (error) {
         logToScreen("failed");
@@ -50,7 +50,7 @@ async function getWeather(cityName) {
     }
 }
 
-// 3. Function to save and show search history
+
 function saveCity(city) {
     let history = JSON.parse(localStorage.getItem('weatherCities')) || [];
     
@@ -69,7 +69,7 @@ function showHistory() {
         const li = document.createElement('li');
         li.textContent = history[i];
         
-        // If you click a name in the list, it searches again
+       
         li.onclick = function() {
             getWeather(history[i]);
         };
@@ -77,14 +77,14 @@ function showHistory() {
     }
 }
 
-// 4. Handle the "Search" button click
+
 form.onsubmit = function(event) {
-    event.preventDefault(); // Stop page from refreshing
+    event.preventDefault(); 
     const city = cityInput.value.trim();
     if (city !== "") {
         getWeather(city);
     }
 };
 
-// Load history when you first open the page
+
 showHistory();
