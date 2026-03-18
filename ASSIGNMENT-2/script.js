@@ -1,6 +1,6 @@
 const API_KEY = '2d54b8e618d5491ad21d780ba2f02a23';
 
-// Get the HTML elements we need to work with
+
 const form = document.querySelector('#weatherForm');
 const cityInput = document.querySelector('#city');
 const weatherDisplay = document.querySelector('#weatherDisplay');
