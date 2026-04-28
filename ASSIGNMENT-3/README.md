@@ -1,7 +1,7 @@
 ## 🌐 Deployment
 
 This project is deployed and hosted at:
-- **Lab-3 Host Link:** https://web-dev-2-lab-assignment-omega.vercel.app/
+- **Lab-3 Host Link:** https://reactstudentscoreboard-6in9xwehi-farhan0386s-projects.vercel.app/
 
 ---
 
