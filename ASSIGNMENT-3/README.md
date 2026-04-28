@@ -1,3 +1,11 @@
+## 🌐 Deployment
+
+This project is deployed and hosted at:
+- **Lab-3 Host Link:** https://web-dev-2-lab-assignment-omega.vercel.app/
+
+---
+
+
 # 📊 Student Scoreboard Application
 
 A modern, responsive **React-based management tool** for tracking and managing student scores, built as a Web Development assignment. This application provides a clean interface to view student performance, update scores in real-time, and add new students with automatic Pass/Fail status calculation.
@@ -98,12 +106,6 @@ App (Root Component)
 
 ---
 
-## 🌐 Deployment
-
-This project is deployed and hosted at:
-- **Lab-3 Host Link:** https://web-dev-2-lab-assignment-omega.vercel.app/
-
----
 
 ## 📁 Project Structure
 
