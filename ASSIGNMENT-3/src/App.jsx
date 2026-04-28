@@ -33,7 +33,6 @@ function App() {
       <Header />
       <AddStudentForm onAddStudent={addStudent} />
       <StudentTable students={students} onUpdateScore={updateScore} />
-      <Watermark />
     </div>
   );
 }
