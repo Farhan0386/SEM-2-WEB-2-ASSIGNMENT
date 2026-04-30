@@ -1,16 +1,14 @@
-/* Global Reset and Font */
 * {
   box-sizing: border-box;
-  font-family: Arial, sans-serif; /* Standard font from Assignment-1 */
+  font-family: Arial, sans-serif;
 }
 
 body {
   margin: 0;
-  background-color: #ffffff; /* White background */
+  background-color: #ffffff;
   color: #000000;
 }
 
-/* Main Layout Container */
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -20,7 +18,6 @@ body {
   margin: 0 auto;
 }
 
-/* Header styling */
 .header {
   width: 100%;
   text-align: center;
@@ -35,15 +32,13 @@ body {
   margin: 0;
 }
 
-/* Blue Card Style for Form and Table */
 .form-container, .table-container {
-  background: #4f85c7; /* Medium blue background from Assignment-1 */
+  background: #4f85c7;
   border-radius: 12px;
   padding: 20px;
   color: #ffffff;
 }
 
-/* Form Section (Left Column) */
 .form-container {
   width: 35%;
   min-width: 300px;
@@ -70,7 +65,6 @@ input {
   background: #ffffff;
 }
 
-/* Table Section (Right Column) */
 .table-container {
   flex: 1;
   width: 60%;
@@ -79,18 +73,18 @@ input {
 table {
   width: 100%;
   border-collapse: separate;
-  border-spacing: 0 12px; /* Adds space between rows to make them look like cards */
+  border-spacing: 0 12px;
 }
 
 th {
   text-align: left;
   padding: 10px;
-  color: #ffffff;
+  color: #e03838;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 tr {
-  background: #f3f3f3; /* Light gray rows to mimic demo cards */
+  background: #f3f3f3;
 }
 
 td {
@@ -98,13 +92,11 @@ td {
   color: #333;
 }
 
-/* Rounded corners for the "card" rows */
 tr td:first-child { border-radius: 10px 0 0 10px; }
 tr td:last-child { border-radius: 0 10px 10px 0; }
 
-/* Buttons styling */
 button {
-  background: #1fb6a6; /* Teal color */
+  background: #1fb6a6;
   color: white;
   border: none;
   padding: 10px 15px;
@@ -118,7 +110,6 @@ button:hover {
   background: #16998b;
 }
 
-/* Status Badges */
 .status-badge {
   display: inline-block;
   padding: 4px 10px;
@@ -129,11 +120,11 @@ button:hover {
 }
 
 .status-pass {
-  background: #a2df53; /* Green for pass */
+  background: #a2df53;
 }
 
 .status-fail {
-  background: #ef4444; /* Red for fail */
+  background: #ef4444;
 }
 
 .action-cell {
@@ -146,7 +137,6 @@ button:hover {
   margin: 0;
 }
 
-/* Responsive Layout */
 @media (max-width: 900px) {
   .container {
     flex-direction: column;
