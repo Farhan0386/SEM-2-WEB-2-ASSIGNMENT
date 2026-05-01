@@ -20,7 +20,7 @@ const weatherSlice = createSlice({
     data: null,
     loading: false,
     error: null,
-    city: 'London',
+    city: 'Sohna',
   },
   reducers: {
     setCity: (state, action) => { state.city = action.payload; },
