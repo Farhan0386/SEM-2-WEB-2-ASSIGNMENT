@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCity } from '../store/weatherSlice';
-import { useDebounce } from '../hooks/useDebounce';
 import { Search, X } from 'lucide-react';
 
 const SearchBar = () => {
@@ -9,16 +8,16 @@ const SearchBar = () => {
   const currentCity = useSelector(s => s.weather.city);
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState('');
-  const debouncedInput = useDebounce(input, 500);
   const inputRef = useRef(null);
 
-  useEffect(() => {
-    if (debouncedInput && debouncedInput.trim() !== '' && debouncedInput.trim() !== currentCity) {
-      dispatch(setCity(debouncedInput.trim()));
-      setIsOpen(false);
-      setInput('');
+  const handleSubmit = () => {
+    const trimmed = input.trim();
+    if (trimmed && trimmed !== currentCity) {
+      dispatch(setCity(trimmed));
     }
-  }, [debouncedInput, dispatch, currentCity]);
+    setIsOpen(false);
+    setInput('');
+  };
 
   useEffect(() => {
     if (isOpen && inputRef.current) inputRef.current.focus();
@@ -35,9 +34,14 @@ const SearchBar = () => {
         </button>
       ) : (
         <div className="glass flex items-center gap-3 px-5 py-3 min-w-[320px] border-indigo-500/30">
-          <Search className="w-4 h-4 text-indigo-500 dark:text-indigo-400" />
+          <button type="button" onClick={handleSubmit} className="p-0 flex items-center" aria-label="Submit search">
+            <Search className="w-4 h-4 text-indigo-500 dark:text-indigo-400" />
+          </button>
           <input ref={inputRef} type="text" value={input} onChange={e => setInput(e.target.value)}
-            onKeyDown={e => { if (e.key === 'Escape') { setIsOpen(false); setInput(''); } }}
+            onKeyDown={e => {
+              if (e.key === 'Enter') handleSubmit();
+              if (e.key === 'Escape') { setIsOpen(false); setInput(''); }
+            }}
             placeholder="Type a city name..."
             className="bg-transparent text-slate-800 dark:text-white placeholder-slate-400 dark:placeholder-white/25 focus:outline-none text-sm flex-1 font-medium"
           />
