@@ -34,7 +34,7 @@ const SearchBar = () => {
         </button>
       ) : (
         <div className="glass flex items-center gap-3 px-5 py-3 min-w-[320px] border-indigo-500/30">
-          <button onClick={handleSubmit} className="p-0 flex items-center" aria-label="Submit search">
+          <button type="button" onClick={handleSubmit} className="p-0 flex items-center" aria-label="Submit search">
             <Search className="w-4 h-4 text-indigo-500 dark:text-indigo-400" />
           </button>
           <input ref={inputRef} type="text" value={input} onChange={e => setInput(e.target.value)}
