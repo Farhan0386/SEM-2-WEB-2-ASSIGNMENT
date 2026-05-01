@@ -13,13 +13,13 @@ const FeelsLikeCard = ({ current }) => {
   return (
     <div className="glass glass-gradient p-6 animate-fade-up" style={{ animationDelay: '0.9s' }}>
       <div className="flex items-center gap-2 mb-4">
-        <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-fuchsia-500 to-purple-700 flex items-center justify-center shadow-lg shadow-fuchsia-500/20">
+        <div className="w-8 h-8 rounded-xl bg-fuchsia-600 flex items-center justify-center shadow-lg shadow-fuchsia-500/20">
           <Thermometer className="w-4 h-4 text-white" />
         </div>
-        <h3 className="text-sm font-bold text-white/80 uppercase tracking-wider">Feels Like</h3>
+        <h3 className="text-sm font-bold text-slate-700 dark:text-white/80 uppercase tracking-wider">Feels Like</h3>
       </div>
-      <p className="text-4xl font-extrabold bg-gradient-to-r from-fuchsia-400 to-purple-400 bg-clip-text text-transparent mb-2">{feels}°</p>
-      <p className="text-xs text-white/40">{emoji} {desc}</p>
+      <p className="text-4xl font-extrabold text-fuchsia-500 dark:text-fuchsia-400 mb-2">{feels}°</p>
+      <p className="text-xs text-slate-400 dark:text-white/40">{emoji} {desc}</p>
     </div>
   );
 };

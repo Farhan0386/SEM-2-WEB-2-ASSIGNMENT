@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getWeatherData } from './store/weatherSlice';
 import { useAutoRefresh } from './hooks/useAutoRefresh';
 import WeatherDashboard from './components/WeatherDashboard';
+import { ThemeProvider } from './context/ThemeContext';
 
 function App() {
   const dispatch = useDispatch();
@@ -14,7 +15,11 @@ function App() {
 
   useAutoRefresh(city, 10);
 
-  return <WeatherDashboard />;
+  return (
+    <ThemeProvider>
+      <WeatherDashboard />
+    </ThemeProvider>
+  );
 }
 
 export default App;

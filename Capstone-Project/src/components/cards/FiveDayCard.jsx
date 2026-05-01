@@ -26,10 +26,10 @@ const FiveDayCard = ({ forecast }) => {
   return (
     <div className="glass glass-gradient p-6 animate-fade-up h-full" style={{ animationDelay: '0.2s' }}>
       <div className="flex items-center gap-2 mb-5">
-        <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center shadow-lg shadow-amber-500/20">
+        <div className="w-8 h-8 rounded-xl bg-amber-500 flex items-center justify-center shadow-lg shadow-amber-500/20">
           <CalendarDays className="w-4 h-4 text-white" />
         </div>
-        <h3 className="text-sm font-bold text-white/80 uppercase tracking-wider">5-Day Forecast</h3>
+        <h3 className="text-sm font-bold text-slate-700 dark:text-white/80 uppercase tracking-wider">5-Day Forecast</h3>
       </div>
       <div className="flex flex-col gap-3.5">
         {dailyData.map((d, i) => {
@@ -40,22 +40,21 @@ const FiveDayCard = ({ forecast }) => {
 
           return (
             <div key={i} className="flex items-center gap-3 group">
-              <span className="text-sm font-medium text-white/60 w-12 shrink-0 group-hover:text-white/90 transition-colors">
+              <span className="text-sm font-medium text-slate-500 dark:text-white/60 w-12 shrink-0 group-hover:text-slate-800 dark:group-hover:text-white/90 transition-colors">
                 {i === 0 ? 'Today' : format(new Date(d.dt * 1000), 'EEE')}
               </span>
               <img src={`https://openweathermap.org/img/wn/${d.weather[0].icon}.png`} alt="" className="w-9 h-9 shrink-0 group-hover:scale-110 transition-transform" />
-              <span className="text-sm text-cyan-300/70 w-9 text-right shrink-0 font-medium">{low}°</span>
-              <div className="flex-1 h-2 bg-white/[0.06] rounded-full relative mx-1 min-w-[60px]">
+              <span className="text-sm text-cyan-500 dark:text-cyan-300/70 w-9 text-right shrink-0 font-medium">{low}°</span>
+              <div className="flex-1 h-2 bg-slate-200 dark:bg-white/[0.06] rounded-full relative mx-1 min-w-[60px]">
                 <div
-                  className="absolute h-full rounded-full shadow-sm"
+                  className="absolute h-full rounded-full shadow-sm bg-indigo-500"
                   style={{
                     left: `${leftPct}%`,
                     width: `${Math.max(widthPct, 10)}%`,
-                    background: 'linear-gradient(90deg, #38bdf8, #818cf8, #e879f9, #fb923c)',
                   }}
                 />
               </div>
-              <span className="text-sm font-bold text-amber-300 w-9 shrink-0">{high}°</span>
+              <span className="text-sm font-bold text-amber-500 dark:text-amber-300 w-9 shrink-0">{high}°</span>
             </div>
           );
         })}
