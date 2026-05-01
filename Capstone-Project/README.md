@@ -75,8 +75,10 @@ If deploying to Vercel, ensure your settings are configured correctly:
 - **Framework Preset:** Vite
 - **Build Command:** `npm run build`
 - **Output Directory:** `dist`
-- **Root Directory:** Leave this empty (since the project is now in the root).
+- **Root Directory:** `Capstone-Project` (this repository contains multiple projects).
 - **Environment Variables:** Add `VITE_OPENWEATHER_API_KEY` in the Vercel dashboard.
+
+Do not commit your real `.env` file. Keep your local key in `.env` and add only the variable in Vercel settings.
 
 ---
 
