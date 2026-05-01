@@ -1,1 +1,11 @@
+# Environment files
 Capstone-Project/.env
+ASSIGNMENT-3/.env
+
+# Dependencies
+Capstone-Project/node_modules/
+ASSIGNMENT-3/node_modules/
+
+# Build output
+Capstone-Project/dist/
+ASSIGNMENT-3/dist/
